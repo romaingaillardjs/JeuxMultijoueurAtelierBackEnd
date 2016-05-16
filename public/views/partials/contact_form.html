@@ -1,0 +1,58 @@
+<div ng-controller="addContactCtrl">
+    <div class="list-group-item">
+        <div name="userForm" class="form-group">
+            <form name="myForm">
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                    <label for="name">name: </label>
+                    <input  name="myName" id="name" class="form-control" type="text" ng-model="currentContact.name" required/>
+                    <div ng-messages="myForm.myName.$error" style="color:red" role="alert">
+                        <div ng-message="required" role="alert">You did not enter a field</div>
+                    </div>
+                </div>
+                <label for="email">email:</label>
+                <input placeholder="placeholder" type="email" name="myField" required id="email" class="form-control" type="text" ng-model="currentContact.email">
+                    <div ng-messages="myForm.myField.$error" role="alert" style="color:red" role="alert">
+                        <div ng-message="email" role="alert">This field must be a valid email address.</div>
+                    </div>
+                    <label for="phone">phone:</label>
+                    <input ng-minlength="10" ng-maxlength="10" name="myPhone" id="phone" class="form-control" ng-model="currentContact.phone" ng-pattern="regex" required>
+                        <div ng-messages="myForm.myPhone.$error" style="color:red" role="alert">
+                            <div ng-message-exp="['minlength', 'maxlength','pattern']">This field must be a valid phone number.</div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                            <label for="url">url:</label>
+                            <input id="url" name="myUrl" class="form-control" type="URL" ng-model="currentContact.url">
+                                <div ng-messages="myForm.url.$error" style="color:red" role="alert">
+                                    <div ng-message="required" role="alert">You did not enter a field </div>
+                                </div>
+                            </div>
+                            <label for="notes">notes:</label>
+                            <textarea class="form-control" id="notes" rows="3" ng-model="currentContact.notes"></textarea>
+                        </form>
+                    </div>
+                    <a ng-if="path === '/add' " ng-href="#/contact-info/{{ contacts.length - 1 }}" ng-click="addContact()">
+                        <button class="btn btn-default">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            <span> Add</span>
+                        </button>
+                    </a>
+                    <a ng-if="path !== '/add'">
+                        <button class="btn btn-success" ng-click="editcontact(currentContact)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            <span> Save Edits</span>
+                        </button>
+                    </a>
+                    <a ng-if="path === '/add'" ng-click="addcontact()">
+                        <button class="btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            <span> DataBase Record</span>
+                        </button>
+                    </a>
+                    <a href="#/">
+                        <button class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            <span>  Cancel</span>
+                        </button>
+                    </a>
+                </div>
+            </div>

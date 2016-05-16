@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="public/css/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+        </head>
+        <body ng-app="contactListApp">
+            <div class="global-wrapper">
+                <!-- nav section -->
+                <nav class="navbar navbar-default" ng-controller="navCtrl">
+                    <div class="container-fluid">
+                        <div class="nav-header">
+                            <ul href="#" class="nav navbar-nav text-center">
+                                <li></li>
+                            </ul>
+                            <ul class="nav navbar-nav">
+                                <li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
+                                    <a class="text-center" ng-click="nav.navClick($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div ng-view></div>
+            </div>
+            <script src="public/js/angular.min.js"></script>
+            <script src="public/js/angular-route.min.js"></script>
+            <script src="public/js/angular-messages.min.js"></script>
+            <script src="public/js/uibootstrap125.min.js"></script>
+            <script src="public/js/app.js"></script>
+            <script src="public/js/controllers.js"></script>
+            <script src="public/js/services.js"></script>
+            <script src="public/js/filters.js"></script>
+            <script src="public/js/directives.js"></script>
+            <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        </body>
+    </html>
+

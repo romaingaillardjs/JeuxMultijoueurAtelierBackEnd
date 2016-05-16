@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="list-group-item">
+        <div name="userForm" class="form-group">
+            <form name="myForm">
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                    <label for="name">name: </label>
+                    <input  name="myName" id="name" class="form-control" type="text" ng-model="currentContact.name" required/>
+                    <div ng-messages="myForm.myName.$error" style="color:red" role="alert">
+                        <div ng-message="required" role="alert">You did not enter a field</div>
+                    </div>
+                </div>
+                <label for="notes">notes:</label>
+                <textarea class="form-control" id="notes" rows="3" ng-model="currentContact.notes"></textarea>
+            </form>
+        </div>
+        <a ng-href="#/contact-info/{{ contacts.length - 1 }}" ng-click="addContact()">
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-ok"></span>
+                <span> Add</span>
+            </button>
+        </a>
+        <a ng-click="addcontact(currentContact)">
+            <button class="btn btn-success">
+                <span class="glyphicon glyphicon-ok"></span>
+                <span> DataBase Record</span>
+            </button>
+        </a>
+        <a href="#/">
+            <button class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span>
+                <span>  Cancel</span>
+            </button>
+        </a>
+    </div>
+</div>

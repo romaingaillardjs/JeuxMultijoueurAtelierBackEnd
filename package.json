@@ -1,0 +1,32 @@
+
+{
+  "name": "Jeuxmultijoueur",
+  "version": "1.0.0",
+  "description": ":)",
+  "engines": {
+    "node": "5.9.1",
+    "npm" : "3.8.6"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mongodb": "^2.1.18",
+    "socket.io":"^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romaingaillardjs/AtelierBackEnd.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

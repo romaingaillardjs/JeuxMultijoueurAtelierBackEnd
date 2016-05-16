@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row panel panel-warning">
+        <div class="panel-heading">
+            <h2 class="panel-title">PaintBall Multiplayer</h2>
+        </div>
+        <!--     contact list      -->
+        <div class="col-xs-12 panel-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h4>parties:</h4>
+                    <input class="form-control" placeholder="Seach Your Contacts" type="text" ng-model="searchText">
+                        <parties class="list-group-item" ng-repeat="contact in Parties | orderBy: name | filter: searchText"></parties >
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-7 panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <h4>info</h4>
+                        <div class="list-group-item">
+                            <h3 class="text-center">{{currentContact.name}}</h3>
+                            <p>createur: {{currentContact.createur}}</p>
+                            <p>score: {{currentContact.joueur}}</p>
+                            <p>room: {{currentContact.room}}</p>
+                            <p>Notes:</p>
+                            <p class="well well-lg">{{currentContact.notes}}</p>
+                            <a ng-click="rejoindre(currentContact.room)")>
+                            
+ 
+            
+                                <button class="btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    <span> rejoindre</span>
+                                </button>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
