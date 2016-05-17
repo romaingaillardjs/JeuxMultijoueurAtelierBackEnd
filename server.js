@@ -23,7 +23,7 @@ var express         = require('express'),
 //stocker les sockets
     connections     = [],
 //url BDD
-    URL             = 'mongodb://heroku_p5fhvcwj@ds023932.mlab.com:23932/heroku_p5fhvcwj';
+    URL             = 'mongodb://romain.gaillard:romain5589@ds021289.mlab.com:21289/contactlist';
 //Réglages
 app.use(cookieParser());
 app.use(session({
@@ -111,7 +111,7 @@ db.connect(URL, function(err, db) {
   if (err) {
     return console.log('erreur');
     } else {
-      http.listen(3000, function() {
+      http.listen(process.env.PORT || 3000, function() {
       var date = new Date();
       console.log(tools.dateHeureLongue(date) + ' - Le serveur est disponible sur le port 8080');
       });
