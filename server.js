@@ -23,7 +23,7 @@ var express         = require('express'),
 //stocker les sockets
     connections     = [],
 //url BDD
-    URL             = 'mongodb://heroku_p5fhvcwj@ds023932.mlab.com:23932/heroku_p5fhvcwj;
+    URL             = 'mongodb://heroku_p5fhvcwj@ds023932.mlab.com:23932/heroku_p5fhvcwj';
 //Réglages
 app.use(cookieParser());
 app.use(session({
